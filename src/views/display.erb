@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard Iframe</title>
+  <style>
+    /* Basic Metabase-like styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #f5f7fa; /* Light background often seen in Metabase */
+      color: #2c2c2c;
+    }
+
+    /* Top header bar */
+    .header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .logo img {
+      height: 40px; /* Adjust as needed */
+    }
+
+    /* Logout button styling */
+    .logout-button a {
+      background-color: #d9534f; /* A red tone for logout */
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .logout-button a:hover {
+      background-color: #c9302c; /* Darker on hover */
+    }
+
+    /* Container for the iframe */
+    .iframe-container {
+      padding: 1rem;
+    }
+
+    /* Make the iframe fill the width, set a fixed or flexible height */
+    iframe {
+			height: 100vh;
+      width: 95vw;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top header with logo on the left, logout button on the right -->
+  <div class="header">
+    <div class="logo">
+      <!-- If you have a local logo file in public/images/logo.png -->
+      <img src="/images/valent_logo.svg" alt="Valent">
+      <!-- OR reference an external URL:
+      <img src="https://example.com/your-logo.png" alt="Company Logo"> -->
+    </div>
+    <div class="logout-button">
+      <a href="/logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- Main content area for the Metabase iframe -->
+  <div class="iframe-container">
+    <iframe
+      src="<%= @iframe_url %>"
+      allowtransparency="true"
+    ></iframe>
+  </div>
+</body>
+</html>
+

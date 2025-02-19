@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<style>
+/* Basic Metabase-like styling */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	background-color: #f5f7fa; /* Light background often seen in Metabase */
+	color: #2c2c2c;
+
+}
+
+		/* Top header bar (shared with display.erb) */
+		.header {
+			background-color: #fff;
+			border-bottom: 1px solid #ddd;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1rem;
+
+		}
+		.logo img {
+			height: 40px; /* Adjust as needed */
+
+		}
+		.logout-button a {
+			background-color: #d9534f; /* A red tone for logout */
+			color: #fff;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			text-decoration: none;
+			font-size: 1rem;
+
+		}
+		.logout-button a:hover {
+			background-color: #c9302c; /* Darker on hover */
+
+		}
+
+		/* Centered container for the login box */
+		.login-container {
+			max-width: 400px;
+			margin: 50px auto;
+			padding: 2rem;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+
+		}
+		.login-container h1 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+
+		}
+		.login-container p {
+			margin-bottom: 1.5rem;
+
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+
+		}
+		input[type="password"] {
+			width: 100%;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 1rem;
+
+		}
+		button {
+			padding: 0.5rem 1rem;
+			background-color: #509ee3; /* Metabase-like blue */
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 1rem;
+
+		}
+		button:hover {
+			background-color: #2e79c7; /* Darker on hover */
+
+		}
+
+		/* Error message styling */
+		.error {
+			color: #d9534f;
+			margin-bottom: 1rem;
+
+			<!DOCTYPE html>
+			<html>
+			<head>
+			<meta charset="utf-8">
+			<title>Login</title>
+			<style>
+/* Basic Metabase-like styling */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	background-color: #f5f7fa; /* Light background often seen in Metabase */
+	color: #2c2c2c;
+}
+
+		/* Top header bar (shared with display.erb) */
+		.header {
+			background-color: #fff;
+			border-bottom: 1px solid #ddd;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 1rem;
+		}
+		.logo img {
+			height: 40px; /* Adjust as needed */
+		}
+		.logout-button a {
+			background-color: #d9534f; /* A red tone for logout */
+			color: #fff;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			text-decoration: none;
+			font-size: 1rem;
+		}
+		.logout-button a:hover {
+			background-color: #c9302c; /* Darker on hover */
+		}
+
+		/* Centered container for the login box */
+		.login-container {
+			max-width: 400px;
+			margin: 50px auto;
+			padding: 2rem;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+		.login-container h1 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		.login-container p {
+			margin-bottom: 1.5rem;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+		}
+		input[type="password"] {
+			width: 100%;
+			padding: 0.5rem;
+			margin-bottom: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 1rem;
+		}
+		button {
+			padding: 0.5rem 1rem;
+			background-color: #509ee3; /* Metabase-like blue */
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 1rem;
+		}
+		button:hover {
+			background-color: #2e79c7; /* Darker on hover */
+		}
+
+		/* Error message styling */
+		.error {
+			color: #d9534f;
+			margin-bottom: 1rem;
+		}
+			</style>
+			</head>
+			<body>
+				<!-- Shared Header -->
+				<div class="header">
+					<div class="logo">
+						<!-- Update path if using a different file or an external URL -->
+						<img src="/images/valent_logo.svg" alt="Company Logo">
+					</div>
+					<!-- Only show logout if user is already authenticated -->
+					<% if session[:authenticated] %>
+						<div class="logout-button">
+							<a href="/logout">Logout</a>
+						</div>
+					<% end %>
+				</div>
+
+				<!-- Login Form Container -->
+				<div class="login-container">
+					<h1>Login</h1>
+					<p>Please enter the password provided to your team.</p>
+
+					<% if @error %>
+						<div class="error"><%= @error %></div>
+					<% end %>
+
+					<form action="/login" method="POST">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" required>
+						<button type="submit">Login</button>
+					</form>
+				</div>
+			</body>
+			</html>
+			}
+
